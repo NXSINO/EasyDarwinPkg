@@ -20,7 +20,7 @@ import (
 
 	"github.com/MeloQi/EasyGoLib/utils"
 
-	"github.com/pixelbender/go-sdp/sdp"
+	"github.com/MeloQi/sdp"
 )
 
 type RTSPClient struct {
