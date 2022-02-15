@@ -301,7 +301,7 @@ func (client *RTSPClient) requestStream(timeout time.Duration) (err error) {
 			session, _ = resp.Header["Session"].(string)
 		case "audio":
 			client.AControl = media.Attributes.Get("control")
-			client.ACodec = media.Formats[0].Name
+			client.ACodec = media.Format[0].Name
 			var _url = ""
 			if strings.Index(strings.ToLower(client.AControl), "rtsp://") == 0 {
 				_url = client.AControl
