@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
+	"github.com/MeloQi/EasyGoLib/db"
+	"github.com/MeloQi/EasyGoLib/utils"
+	"github.com/MeloQi/sessions"
 	"github.com/NXSINO/EasyDarwinPkg/models"
 	"github.com/NXSINO/EasyDarwinPkg/rtsp"
 	"github.com/gin-gonic/gin"
-	"github.com/peMeloQinggy/EasyGoLib/db"
-	"github.com/MeloQi/EasyGoLib/utils"
-	"github.com/MeloQi/sessions"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/mem"
 )
