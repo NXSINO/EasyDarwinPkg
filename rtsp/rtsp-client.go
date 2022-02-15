@@ -267,7 +267,7 @@ func (client *RTSPClient) requestStream(timeout time.Duration) (err error) {
 		switch media.Type {
 		case "video":
 			client.VControl = media.Attributes.Get("control")
-			client.VCodec,err := media.Formats[0].Name
+			client.VCodec,err := media.Format[0].Name
 			if err != nil {
 				fmt.Println("270error:", err)
 			}
