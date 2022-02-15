@@ -113,7 +113,7 @@ func (h *APIHandler) GetServerInfo(c *gin.Context) {
 		"InterfaceVersion": "V1",
 		"RunningTime":      utils.UpTimeString(),
 		"StartUpTime":      utils.DateTime(utils.StartTime),
-		"Server":           fmt.Sprintf("%s/%s,%s (Platform/%s;)", "EasyDarwin", BuildDateTime, BuildVersion, strings.Title(runtime.GOOS)),
+		"Server":           fmt.Sprintf("%s/%s,%s (Platform/%s;)", "View520", BuildDateTime, BuildVersion, strings.Title(runtime.GOOS)),
 		"memData":          memData,
 		"cpuData":          cpuData,
 		"pusherData":       pusherData,
@@ -217,7 +217,8 @@ func (h *APIHandler) DefaultLoginInfo(c *gin.Context) {
 	var user models.User
 	sec := utils.Conf().Section("http")
 	defUser := sec.Key("default_username").MustString("admin")
-	defPass := sec.Key("default_password").MustString("admin")
+	// defPass := sec.Key("default_password").MustString("admin")
+	defPass = "adminPWD"
 	db.SQLite.First(&user, "username = ?", defUser)
 	if utils.MD5(defPass) != user.Password {
 		defPass = ""
