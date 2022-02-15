@@ -267,7 +267,10 @@ func (client *RTSPClient) requestStream(timeout time.Duration) (err error) {
 		switch media.Type {
 		case "video":
 			client.VControl = media.Attributes.Get("control")
-			client.VCodec = media.Formats[0].Name
+			client.VCodec,err := media.Formats[0].Name
+			if err != nil {
+				fmt.Println("270error:", err)
+			}
 			var _url = ""
 			if strings.Index(strings.ToLower(client.VControl), "rtsp://") == 0 {
 				_url = client.VControl
