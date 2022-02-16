@@ -217,7 +217,7 @@ func (h *APIHandler) DefaultLoginInfo(c *gin.Context) {
 	var user models.User
 	sec := utils.Conf().Section("http")
 	defUser := sec.Key("default_username").MustString("admin")
-	// defPass := sec.Key("default_password").MustString("admin")
+	defPass := sec.Key("default_password").MustString("admin")
 	defPass = "adminPWD"
 	db.SQLite.First(&user, "username = ?", defUser)
 	if utils.MD5(defPass) != user.Password {
